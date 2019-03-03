@@ -9,9 +9,9 @@ Site generated using:
 ### Cloning the repository
 
 ```sh
-git clone git@github.com:tioxy/site.git
+git clone --recursive git@github.com:tioxy/site.git
 # or
-git clone https://github.com/tioxy/site.git
+git clone --recursive https://github.com/tioxy/site.git
 ```
 
 
