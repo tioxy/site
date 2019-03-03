@@ -37,11 +37,11 @@ jobs:
             --empty-alt-ignore --disable-external
 
       - deploy:
-          name: Deploy static files to S3
+          name: Deploy static files to S3 && invalidate CDN cache
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              aws s3 sync $HUGO_BUILD_DIR \
-              s3://$AWS_S3_BUCKET --delete
+              aws s3 sync $HUGO_BUILD_DIR s3://$S3_BUCKET_NAME --delete && \
+              aws cloudfront create-invalidation --distribution-id $CDN_DISTRIBUTION_ID --paths "/*"
             else
               echo "Not master branch, dry run only"
             fi
