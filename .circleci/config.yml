@@ -1,0 +1,47 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo:latest
+    working_directory: ~/hugo
+    environment:
+      HUGO_BUILD_DIR: ~/hugo/public
+    steps:
+      - run: 
+          name: Install git
+          command: |
+            apk update && apk add git
+
+      - checkout
+
+      - run: 
+          name: Updating submodules
+          command: |
+            git submodule sync && git submodule update --init
+
+      - run:
+          name: Install AWS CLI and dependencies
+          command: |
+            apk add --update python python-dev py-pip build-base
+            pip install awscli
+
+      - run:
+          name: Build static files 
+          command: |
+            HUGO_ENV=production hugo -v -d $HUGO_BUILD_DIR
+
+      - run:
+          name: Test generated HTML files
+          command: |
+            htmlproofer $HUGO_BUILD_DIR --allow-hash-href --check-html \
+            --empty-alt-ignore --disable-external
+
+      - deploy:
+          name: Deploy static files to S3
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws s3 sync $HUGO_BUILD_DIR \
+              s3://$AWS_S3_BUCKET --delete
+            else
+              echo "Not master branch, dry run only"
+            fi
