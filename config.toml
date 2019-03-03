@@ -82,11 +82,12 @@ socialmarkup = true
 ## Main Menu
 [[menu.main]]
     name = "blog"
-    weight = 100
     identifier = "blog"
     url = "/blog/"
+    weight = 100
+    
 [[menu.main]]
     name = "about"
     identifier = "about"
-    weight = 200
     url = "/about/"
+    weight = 200
