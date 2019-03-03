@@ -1,0 +1,92 @@
+## Basic Configuration
+baseurl = "https://tioxy.com/"
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+author = "Gabriel Tiossi"
+title = "TIOXY"
+
+theme = "hugo-goa"
+
+
+## Hugo Built-in Features
+disqusShortname = "tioxy"
+googleAnalytics = "UA-135523633-1"
+enableRobotsTXT = true
+
+
+## Site Settings
+[params]
+author = "Gabriel Tiossi"
+intro = "Learner and Problem Solver"
+description = "One day I'll add a nice description here."
+authorimage = "headshot.jpg"
+dateformat = "Jan 2, 2006"
+
+
+## Site Meta Settings
+[params.meta]
+description = "Just my site."
+keywords = "tioxy,blog"
+
+
+## Social Accounts
+[params.social]
+github = "tioxy"
+instagram = "tioxyofficial"
+#xing = "<username>"
+linkedin = "tioxy"
+twitter = "tioxyofficial"
+#facebook = "<username>"
+#google = "<username>"
+stackoverflow = "7375463/tioxy"
+#lastfm = "<username>"
+#goodreads = "<username>"
+gitlab = "tioxy"
+bitbucket = "tioxy"
+#fivehundredpx = "<username>"
+#flickr = "<username>"
+#foursquare = "<username>"
+#hackernews = "<username>"
+kickstarter = "tioxy"
+#patreon = "<username>"
+#pintrest = "<username>"
+steam = "tioxy"
+reddit = "tioxy"
+#snapchat = "<username>"
+#youtube = "<username>"
+#keybase = "<username>"
+twitch = "tioxy"
+soundcloud = "tioxy"
+#tumblr = "<username>"
+#strava = "<username>"
+#skype = "<username>"
+telegram = "tioxy"
+#whatsapp = "<username>"
+#email = "<username>"
+
+
+## Extras
+[params.extra]
+copyright = "© 2019. Gabriel Tiossi. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
+poweredby = true
+highlightjs = true
+socialmarkup = true
+
+
+## Main Menu
+[[menu.main]]
+    name = "blog"
+    weight = 100
+    identifier = "blog"
+    url = "/blog/"
+[[menu.main]]
+    name = "about"
+    identifier = "about"
+    weight = 200
+    url = "/about/"
