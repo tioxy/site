@@ -1,0 +1,103 @@
+baseURL: "https://tioxy.com/"
+title: TIOXY
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+#googleAnalytics: UA-123-45
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: ExampleSite
+  description: "ExampleSite description"
+  keywords: [home, portfolio]
+  author: Me
+  images:
+    - https://s3.amazonaws.com/files.tioxy.com/photos/nets-plaza-red.jpg
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    disableHLJS: false
+    disableFingerprinting: false
+    favicon: https://s3.amazonaws.com/files.tioxy.com/photos/favicon.ico
+
+  label:
+    text: Home
+    icon: ""
+    iconHeight: 0
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Gabriel Tiossi
+    subtitle: Learner and Problem Solver
+    imageUrl: https://s3.amazonaws.com/files.tioxy.com/photos/nets-plaza-red.jpg
+    imageWidth: 250
+    imageHeight: 250
+    imageTitle: profile
+    buttons: []
+
+  socialIcons:
+    - name: github
+      url: https://github.com/tioxy
+    - name: linkedin
+      url: https://linkedin.com/in/tioxy
+    - name: medium
+      url: https://medium.com/@tioxy
+    - name: dev
+      url: https://dev.to/tioxy
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main: []
