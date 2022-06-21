@@ -51,14 +51,16 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: true
     title: Gabriel Tiossi
-    subtitle: Learner and Problem Solver
+    subtitle: Competitive, Learner and Problem Solver
     imageUrl: https://s3.amazonaws.com/files.tioxy.com/photos/nets-plaza-red.jpg
     imageWidth: 250
     imageHeight: 250
     imageTitle: profile
-    buttons: []
+    buttons:
+      - name: Meet Me
+        url: https://calendly.com/tioxy
 
   socialIcons:
     - name: github
@@ -84,7 +86,7 @@ params:
     hiddenInSingle: false # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/tioxy/site/tree/master/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
