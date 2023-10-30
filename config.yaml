@@ -21,7 +21,7 @@ params:
   keywords: [home, portfolio]
   author: Me
   images:
-    - https://s3.amazonaws.com/files.tioxy.com/photos/nets-plaza-red.jpg
+    - https://s3.amazonaws.com/files.tioxy.com/photos/selfie-2023.jpeg
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
