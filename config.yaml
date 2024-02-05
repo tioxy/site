@@ -60,7 +60,7 @@ params:
     imageTitle: profile
     buttons:
       - name: Meet Me
-        url: https://calendly.com/tioxy
+        url: https://cal.com/tioxy
 
   socialIcons:
     - name: github
