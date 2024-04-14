@@ -16,8 +16,8 @@ minify:
 
 params:
   env: production
-  title: ExampleSite
-  description: "ExampleSite description"
+  title: TIOXY
+  description: "Gabriel's digital home"
   keywords: [home, portfolio]
   author: Me
   images:
