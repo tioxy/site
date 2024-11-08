@@ -21,7 +21,7 @@ params:
   keywords: [home, portfolio]
   author: Me
   images:
-    - https://s3.amazonaws.com/files.tioxy.com/photos/selfie-2023.jpeg
+    - https://s3.amazonaws.com/files.tioxy.com/photos/tioxy-2024-tilted.jpeg
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
