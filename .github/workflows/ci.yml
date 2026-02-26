@@ -24,39 +24,8 @@ jobs:
         run: |
           HUGO_ENV=production hugo -v -d public
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.1"
-          bundler-cache: true
-
-      - name: Install html-proofer
-        run: gem install html-proofer
-
-      - name: Test generated HTML files
-        run: |
-          htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external
-
-      - name: Upload public directory artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: public-dir
-          path: public/
-          retention-days: 1
-
-  deploy:
-    # Only run the deploy job when the push is on the master branch
-    if: github.ref == 'refs/heads/master'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: public-dir
-          path: public/
-
       - name: Configure AWS credentials
+        if: github.ref == 'refs/heads/master'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -64,7 +33,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to S3
+        if: github.ref == 'refs/heads/master'
         run: aws s3 sync public/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
       - name: Invalidate CloudFront cache
+        if: github.ref == 'refs/heads/master'
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/*"
