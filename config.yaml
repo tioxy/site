@@ -53,7 +53,6 @@ params:
   profileMode:
     enabled: true
     title: Gabriel Tiossi
-    subtitle: Competitive, Learner and Problem Solver
     imageUrl: https://s3.amazonaws.com/files.tioxy.com/photos/tioxy-2024-tilted.jpeg
     imageWidth: 250
     imageHeight: 250
@@ -67,18 +66,6 @@ params:
       url: https://github.com/tioxy
     - name: linkedin
       url: https://linkedin.com/in/tioxy
-    - name: medium
-      url: https://medium.com/@tioxy
-    - name: dev
-      url: https://dev.to/tioxy
-
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
-  #   bing:
-  #     SiteVerificationTag: "XYZabc"
-  #   yandex:
-  #     SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: false # hide everywhere but not in structured data
